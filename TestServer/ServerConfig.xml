@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameServer</name>
+    </assembly>
+    <members>
+        <member name="M:TestServer.Manager.ThreadManager.ExecuteOnMainThread(System.Action)">
+            <summary>Sets an action to be executed on the main thread.</summary>
+            <param name="_action">The action to be executed on the main thread.</param>
+        </member>
+        <member name="M:TestServer.Manager.ThreadManager.UpdateMain">
+            <summary>Executes all code meant to run on the main thread. NOTE: Call this ONLY from the main thread.</summary>
+        </member>
+        <member name="T:TestServer.ServerManager.ServerPackets">
+            <summary>Sent from server to client.</summary>
+        </member>
+        <member name="T:TestServer.ServerManager.ClientPackets">
+            <summary>Sent from client to server.</summary>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.#ctor">
+            <summary>Creates a new empty packet (without an ID).</summary>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.#ctor(System.Int32)">
+            <summary>Creates a new packet with a given ID. Used for sending.</summary>
+            <param name="_id">The packet ID.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.#ctor(System.Byte[])">
+            <summary>Creates a packet from which data can be read. Used for receiving.</summary>
+            <param name="_data">The bytes to add to the packet.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.SetBytes(System.Byte[])">
+            <summary>Sets the packet's content and prepares it to be read.</summary>
+            <param name="_data">The bytes to add to the packet.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.WriteLength">
+            <summary>Inserts the length of the packet's content at the start of the buffer.</summary>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.InsertInt(System.Int32)">
+            <summary>Inserts the given int at the start of the buffer.</summary>
+            <param name="_value">The int to insert.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ToArray">
+            <summary>Gets the packet's content in array form.</summary>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Length">
+            <summary>Gets the length of the packet's content.</summary>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.UnreadLength">
+            <summary>Gets the length of the unread data contained in the packet.</summary>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Reset(System.Boolean)">
+            <summary>Resets the packet instance to allow it to be reused.</summary>
+            <param name="_shouldReset">Whether or not to reset the packet.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Byte)">
+            <summary>Adds a byte to the packet.</summary>
+            <param name="_value">The byte to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Byte[])">
+            <summary>Adds an array of bytes to the packet.</summary>
+            <param name="_value">The byte array to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Int16)">
+            <summary>Adds a short to the packet.</summary>
+            <param name="_value">The short to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Int32)">
+            <summary>Adds an int to the packet.</summary>
+            <param name="_value">The int to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Int64)">
+            <summary>Adds a long to the packet.</summary>
+            <param name="_value">The long to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Single)">
+            <summary>Adds a float to the packet.</summary>
+            <param name="_value">The float to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Boolean)">
+            <summary>Adds a bool to the packet.</summary>
+            <param name="_value">The bool to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.String)">
+            <summary>Adds a string to the packet.</summary>
+            <param name="_value">The string to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Numerics.Vector3)">
+            <summary>Adds a Vector3 to the packet.</summary>
+            <param name="_value">The string to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.Write(System.Numerics.Quaternion)">
+            <summary>Adds a Quartenion to the packet.</summary>
+            <param name="_value">The string to add.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadByte(System.Boolean)">
+            <summary>Reads a byte from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadBytes(System.Int32,System.Boolean)">
+            <summary>Reads an array of bytes from the packet.</summary>
+            <param name="_length">The length of the byte array.</param>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadShort(System.Boolean)">
+            <summary>Reads a short from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadInt(System.Boolean)">
+            <summary>Reads an int from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadLong(System.Boolean)">
+            <summary>Reads a long from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadFloat(System.Boolean)">
+            <summary>Reads a float from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadBool(System.Boolean)">
+            <summary>Reads a bool from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadString(System.Boolean)">
+            <summary>Reads a string from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadVector3(System.Boolean)">
+            <summary>Reads a Vector3 from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+        <member name="M:TestServer.ServerManager.Packet.ReadQuartenion(System.Boolean)">
+            <summary>Reads a Quartenion from the packet.</summary>
+            <param name="_moveReadPos">Whether or not to move the buffer's read position.</param>
+        </member>
+    </members>
+</doc>
